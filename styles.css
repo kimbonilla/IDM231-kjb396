@@ -1,0 +1,94 @@
+/*defining fonts*/
+@font-face {
+    font-family: 'minecraft-regular';
+    src: url('fonts/minecraft-regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'minecraft-bold';
+    src: url('fonts/minecraft-bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'manrope';
+    src: url(fonts/manrope.ttf) format(truetype)
+}
+
+/*defining colors*/
+:root {
+    --brown: #4B2507;
+    --off-white: #EFEFEF;
+}
+
+/*assigning colors*/
+* {
+    box-sizing: border-box;
+    color: 	var(--brown);
+}
+
+body{
+    background-color: var(--off-white);
+}
+
+/* all text */
+h1, h2, h3, h4, h5, h6{
+    font-family: 'minecraft-regular', serif;
+    text-shadow: 0px 2px 2px rgb(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 3.5rem;
+    letter-spacing: .075rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    letter-spacing: .05rem;
+}
+
+
+p, input{
+    font-family: 'manrope', sans-serif;
+    letter-spacing: .05rem;
+}
+
+
+/*homepage*/
+/*column layout*/
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 39vw 59vw;
+    column-gap: 2vw;
+}
+
+/*text*/
+.text {
+    align-content: start;
+    padding-left: 50px;
+}
+.text h3 {
+    margin: 50px 0px 25px 0px;
+}
+
+.text input {
+    font-size: 1.125rem;
+    margin-bottom: 50px;
+}
+
+.text p {
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+/*circle*/
+.circle {
+    align-self: center;
+    justify-self: end;
+}
+
+.circle img {
+    max-width: 55vw;
+    max-height: 90vh;
+    padding-right: 50px;
+}

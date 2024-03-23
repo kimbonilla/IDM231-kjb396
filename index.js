@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
     exitEndermanButton.addEventListener("click", function() {
         if (showEnderman.style.display = "block") {
             showEnderman.style.display = "none";
+            const audio= document.querySelector('.enderman-audio')
+            audio.pause();
         }
     });
 
@@ -29,6 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (showEnderman.style.display == "none") {
             showEnderman.style.display = "block";
             exitEndermanButton.style.display = "block";
+            const audio= document.querySelector('.enderman-audio')
+            audio.currentTime = 0;
+            audio.play();
 
         } else {
             showEnderman.style.display = "none";
@@ -41,6 +46,8 @@ const exitZombieButton= document.querySelector('.zombie button')
     exitZombieButton.addEventListener("click", function() {
         if (showZombie.style.display = "block") {
             showZombie.style.display = "none";
+            const audio= document.querySelector('.zombie-audio')
+            audio.pause();
         }
     });
 
@@ -52,6 +59,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (showZombie.style.display == "none") {
             showZombie.style.display = "block";
             exitZombieButton.style.display = "block";
+            const audio= document.querySelector('.zombie-audio')
+            audio.currentTime = 0;
+            audio.play();
         } else {
             showZombie.style.display = "none";
         }
@@ -63,6 +73,8 @@ const exitPigButton= document.querySelector('.pig button')
     exitPigButton.addEventListener("click", function() {
         if (showPig.style.display = "block") {
             showPig.style.display = "none";
+            const audio= document.querySelector('.pig-audio')
+            audio.pause();
         }
     });
 
@@ -75,6 +87,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (showPig.style.display == "none") {
             showPig.style.display = "block";
             exitPigButton.style.display = "block";
+            const audio= document.querySelector('.pig-audio')
+            audio.currentTime = 0;
+            audio.play();
         } else {
             showPig.style.display = "none";
         }
@@ -86,6 +101,8 @@ const exitSheepButton= document.querySelector('.sheep button')
     exitSheepButton.addEventListener("click", function() {
         if (showSheep.style.display = "block") {
             showSheep.style.display = "none";
+            const audio= document.querySelector('.sheep-audio')
+            audio.pause();
         }
     });
 
@@ -97,6 +114,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (showSheep.style.display == "none") {
             showSheep.style.display = "block";
             exitSheepButton.style.display = "block";
+            const audio= document.querySelector('.sheep-audio')
+            audio.currentTime = 0;
+            audio.play();
         } else {
             showSheep.style.display = "none";
         }
@@ -108,6 +128,8 @@ const exitSkeletonButton= document.querySelector('.skeleton button')
     exitSkeletonButton.addEventListener("click", function() {
         if (showSkeleton.style.display = "block") {
             showSkeleton.style.display = "none";
+            const audio= document.querySelector('.skeleton-audio')
+            audio.pause();
         }
     });
 
@@ -119,6 +141,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (showSkeleton.style.display == "none") {
             showSkeleton.style.display = "block";
             exitSkeletonButton.style.display = "block";
+            const audio= document.querySelector('.skeleton-audio')
+            audio.currentTime = 0;
+            audio.play();
         } else {
             showSkeleton.style.display = "none";
         }
@@ -130,6 +155,8 @@ const exitChickenButton= document.querySelector('.chicken button')
     exitChickenButton.addEventListener("click", function() {
         if (showChicken.style.display = "block") {
             showChicken.style.display = "none";
+            const audio= document.querySelector('.chicken-audio')
+            audio.pause();
         }
     });
 
@@ -141,6 +168,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (showChicken.style.display == "none") {
             showChicken.style.display = "block";
             exitChickenButton.style.display = "block";
+            const audio= document.querySelector('.chicken-audio')
+            audio.currentTime = 0;
+            audio.play();
         } else {
             showChicken.style.display = "none";
         }
@@ -152,6 +182,8 @@ const exitSpiderButton= document.querySelector('.spider button')
     exitSpiderButton.addEventListener("click", function() {
         if (showSpider.style.display = "block") {
             showSpider.style.display = "none";
+            const audio= document.querySelector('.spider-audio')
+            audio.pause();
         }
     });
 
@@ -163,6 +195,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (showSpider.style.display == "none") {
             showSpider.style.display = "block";
             exitSpiderButton.style.display = "block";
+            const audio= document.querySelector('.spider-audio')
+            audio.currentTime = 0;
+            audio.play();
         } else {
             showSpider.style.display = "none";
         }
@@ -174,6 +209,8 @@ const exitCreeperButton= document.querySelector('.creeper button')
     exitCreeperButton.addEventListener("click", function() {
         if (showCreeper.style.display = "block") {
             showCreeper.style.display = "none";
+            const audio= document.querySelector('.creeper-audio')
+            audio.pause();
         }
     });
 
@@ -185,6 +222,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (showCreeper.style.display == "none") {
             showCreeper.style.display = "block";
             exitCreeperButton.style.display = "block";
+            const audio= document.querySelector('.creeper-audio')
+            audio.currentTime = 0;
+            audio.play();
         } else {
             showCreeper.style.display = "none";
         }
@@ -196,6 +236,8 @@ const exitVillagerButton= document.querySelector('.villager button')
     exitVillagerButton.addEventListener("click", function() {
         if (showVillager.style.display = "block") {
             showVillager.style.display = "none";
+            const audio= document.querySelector('.villager-audio')
+            audio.pause();
         }
     });
 
@@ -207,6 +249,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (showVillager.style.display == "none") {
             showVillager.style.display = "block";
             exitVillagerButton.style.display = "block";
+            const audio= document.querySelector('.villager-audio')
+            audio.currentTime = 0;
+            audio.play();
         } else {
             showVillager.style.display = "none";
         }
@@ -218,6 +263,8 @@ const exitEnderDragonButton= document.querySelector('.ender-dragon button')
     exitEnderDragonButton.addEventListener("click", function() {
         if (showEnderDragon.style.display = "block") {
             showEnderDragon.style.display = "none";
+            const audio= document.querySelector('.ender-dragon-audio')
+            audio.pause();
         }
     });
 
@@ -229,6 +276,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (showEnderDragon.style.display == "none") {
             showEnderDragon.style.display = "block";
             exitEnderDragonButton.style.display = "block";
+            const audio= document.querySelector('.ender-dragon-audio')
+            audio.currentTime = 0;
+            audio.play();
         } else {
             showEnderDragon.style.display = "none";
         }
@@ -240,6 +290,8 @@ const exitLlamaButton= document.querySelector('.llama button')
     exitLlamaButton.addEventListener("click", function() {
         if (showLlama.style.display = "block") {
             showLlama.style.display = "none";
+            const audio= document.querySelector('.llama-audio')
+            audio.pause();
         }
     });
 
@@ -251,6 +303,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (showLlama.style.display == "none") {
             showLlama.style.display = "block";
             exitLlamaButton.style.display = "block";
+            const audio= document.querySelector('.llama-audio')
+            audio.currentTime = 0;
+            audio.play();
         } else {
             showLlama.style.display = "none";
         }
@@ -262,6 +317,8 @@ const exitWolfButton= document.querySelector('.wolf button')
     exitWolfButton.addEventListener("click", function() {
         if (showWolf.style.display = "block") {
             showWolf.style.display = "none";
+            const audio= document.querySelector('.wolf-audio')
+            audio.pause();
         }
     });
 
@@ -273,6 +330,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (showWolf.style.display == "none") {
             showWolf.style.display = "block";
             exitWolfButton.style.display = "block";
+            const audio= document.querySelector('.wolf-audio')
+            audio.currentTime = 0;
+            audio.play();
         } else {
             showWolf.style.display = "none";
         }
@@ -316,17 +376,3 @@ function getBirthdayMob() {
         document.getElementById("Mob").textContent = "enderman";
     }
 }
-/*
-const smallEnderman = document.querySelector(".enderman-pic img");
-
-smallEnderman.addEventListener("click", function () {
-    const smallEnderman = document.querySelector(".enderman");
-    smallEnderman.style.visibilty="hidden" ;
-});
-*/
-
-
-/*document.querySelector('.enderman-pic').addEventListener('click', function(){
-    const endermanCard= querySelector('.enderman');
-    endermanCard.style.visibility= 'visible';
-});*/

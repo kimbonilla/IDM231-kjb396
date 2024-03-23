@@ -83,12 +83,30 @@ p, input{
 
 .text input {
     font-size: 1.125rem;
-    margin-bottom: 50px;
 }
 
 .text p {
     font-size: 1.5rem;
     line-height: 150%;
+}
+
+.birthday-form button {
+    font-family: 'manrope';
+    background-color: white;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: var(--brown);
+    font-size: 1.125rem;
+    margin: 10px 0 25px;
+}
+
+form {
+    margin-bottom: 50px;
+}
+
+input {
+    border-color: var(--brown);
+    border-radius: 5px;
 }
 
 /*help button*/
@@ -97,7 +115,7 @@ p, input{
     border-width: 3px;
     border-radius: 10px;
     border-color: var(--brown);
-    background-color: var(--off-white);
+    background-color: white;
     cursor: pointer;
 }
 

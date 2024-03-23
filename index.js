@@ -339,7 +339,23 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-/*-------------- */
+/*select birthday*/
+
+function computeZod(){
+    console.log('computeZod called!');
+    let userBday = zodDateObj.value;
+    console.log('userBday is ' + userBday);
+    let monthStr = userBday.substr(5,2)
+    let dayStr = userBday.substr(8,2);
+    //convert str to number
+    let monthNum = parseInt(monthStr);
+    let dayNum = parseInt(dayStr);
+
+    console.log('monthNum = ' + monthNum)
+    console.log('dayNum = ' + dayNum)
+}
+
+/*
 function getMonthDay(dateString) {
     var dateArr = dateString.split("-");
     var month = dateArr[1]
@@ -351,7 +367,11 @@ function getBirthdayMob() {
     var dateString = document.getElementsByClassName("calendar")[0].value;
     var month, day = getMonth(dateString);
     if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
-        document.getElementById("Mob").textContent = "wolf";
+        showWolf.style.display = "block";
+            exitWolfButton.style.display = "block";
+            const audio= document.querySelector('.wolf-audio')
+            audio.currentTime = 0;
+            audio.play();
     } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
         document.getElementById("Mob").textContent = "llama";
     } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
@@ -376,3 +396,4 @@ function getBirthdayMob() {
         document.getElementById("Mob").textContent = "enderman";
     }
 }
+*/

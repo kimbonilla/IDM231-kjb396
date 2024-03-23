@@ -173,6 +173,13 @@ input {
     text-align: center;
 }
 
+.cards button p{
+    font-family: 'minecraft-regular', serif;
+    font-size: 1.75rem;
+    letter-spacing: .05rem;
+    margin: 0;
+}
+
 .cards p{
     font-size: 1.2rem;
     line-height: 1.9rem;

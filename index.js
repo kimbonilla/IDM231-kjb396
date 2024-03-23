@@ -40,20 +40,23 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
 /*pop up cards on click*/
-    mobSelectors.forEach(({ button, pic, container, audio }) => {
-        const exitButton = `${container} button`;
-        const exitElement = `${container}-button`;
-        const exitAudio = `${container}-audio`;
-
-        const exitButtonSelector = document.querySelector(exitButton);
-        const elementSelector = document.querySelector(exitElement);
-        const audioSelector = document.querySelector(exitAudio);
-
-        addExitEventListener(exitButton, elementSelector, audioSelector);
-
-        const smallElement = document.querySelector(pic);
-        smallElement.addEventListener("click", () => showAndPlay(container, audio));
+mobSelectors.forEach(({ button, pic, container, audio }) => {
+    const smallElement = document.querySelector(pic);
+    smallElement.addEventListener("click", () => {
+        const exitButton = document.querySelector(container + ' .close');
+        if (exitButton) {
+            exitButton.style.display = 'block';
+            exitButton.addEventListener('click', function() {
+                document.querySelector(container).style.display = 'none';
+                const audio = document.querySelector(audio);
+                if (audio) {
+                    audio.pause();
+                }
+            });
+        }
+        showAndPlay(container, audio);
     });
+});
 
 /*help button*/
     const helpButton = document.querySelector('.help-button button');

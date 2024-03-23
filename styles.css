@@ -171,9 +171,6 @@ input {
     border-color: var(--brown);
     align-content: center;
     text-align: center;
-}
-
-.cards button p{
     font-family: 'minecraft-regular', serif;
     font-size: 1.75rem;
     letter-spacing: .05rem;

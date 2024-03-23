@@ -384,6 +384,19 @@ const handleBirthdayForm = event => {
 
     const showMob = document.querySelector('.' + mob);
     showMob.style.display = 'block';
+
+    const audio = document.querySelector('.' + mob + '-audio');
+    if (audio) {
+        audio.play();
+    }
+
+    const exitButton = showMob.querySelector('.close');
+    exitButton.addEventListener('click', function() {
+        showMob.style.display = 'none';
+        if (audio) {
+            audio.pause();
+        }
+    });
 };
 
 birthdayForm.addEventListener('submit', handleBirthdayForm);

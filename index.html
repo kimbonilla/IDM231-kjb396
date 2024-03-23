@@ -12,7 +12,11 @@
             <h1>Which Minecraft Mob Are You?</h1>
             <div class="input-box">
             <h3>Select your birthday.</h3>
-            <input type="date">
+            <input type="date" class="calendar">
+            </div>
+            <div class="help-button">
+                <button>
+                    <h2>?</h2></button>
             </div>
             <div class="instructions">
             <p>Select your birthday above to see what Minecraft mob you are.</p>
@@ -20,69 +24,143 @@
             <p>Select a mob to find out which astrological sign it matches with.</p>
             </div>
         </div>
-        <div class="circle">
-            <img alt="Minecraft Circle" src="images/place-holder_circle.png">
+        <div class="mob-options">
+            <img class="enderman-pic" alt="Enderman Preview" src="images/circle-enderman.png">
+            <img class="zombie-pic" alt="Zombie Preview" src="images/circle-zombie.png">
+            <img class="pig-pic" alt="Pig Preview" src="images/circle-pig.png">
+            <img class="sheep-pic" alt="Sheep Preview" src="images/circle-sheep.png">
+            <img class="skeleton-pic" alt="Skeleton Preview" src="images/circle-skeleton.png">
+            <img class="chicken-pic" alt="Chicken Preview" src="images/circle-chicken.png">
+            <img class="spider-pic" alt="Spider Preview" src="images/circle-spider.png">
+            <img class="creeper-pic" alt="Creeper Preview" src="images/circle-creeper.png">
+            <img class="villager-pic" alt="Villager Preview" src="images/circle-villager.png">
+            <img class="ender-dragon-pic" alt="Ender Dragon Preview" src="images/circle-ender-dragon.png">
+            <img class="llama-pic" alt="Llama Preview" src="images/circle-llama.png">
+            <img class="wolf-pic" alt="Wolf Preview" src="images/circle-wolf.png">
         </div>
     </div>
-    <div class="circle">
+    <div class="audios">
+        <audio src="audios/audio_enderman.ogg" controls></audio>
+        <audio src="audios/audio_zombie.ogg" controls></audio>
+        <audio src="audios/audio_pig.oga" controls></audio>
+        <audio src="audios/audio_sheep.oga" controls></audio>
+        <audio src="audios/audio_skeleton.ogg" controls></audio>
+        <audio src="audios/audio_chicken.ogg" controls></audio>
+        <audio src="audios/audio_spider.ogg" controls></audio>
+        <audio src="audios/audio_creeper.oga" controls></audio>
+        <audio src="audios/audio_villager.ogg" controls></audio>
+        <audio src="audios/audio_ender-dragon.ogg" controls></audio>
+        <audio src="audios/audio_llama.ogg" controls></audio>
+        <audio src="audios/audio_wolf.ogg" controls></audio>
+    </div>
+    <div class="cards">
         <div class="enderman">
+            <button class="close">
+                <h4>X</h4>
+            </button>
             <h2>Enderman</h2>
+            <img alt="Enderman" src="images/enderman.webp">
             <p>You, with your curious and unconventional nature, find resonance with the mysterious Enderman in Minecraft. You both embody a sense of individuality and freedom, often wandering into uncharted territory. Just as the Enderman teleports unpredictably, you embrace change and innovation with ease. You both are enigmatic and misunderstood, yet your unique perspectives and abilities contribute to the richness of their respective worlds.</p>
         </div>
         <div class="zombie">
+            <button class="close">
+                <h4>X</h4>
+            </button>
             <h2>Zombie</h2>
+            <img alt="Zombie" src="images/zombie.webp">
             <p>You share a deep empathy and sensitivity with the lumbering Zombies of Minecraft. You both embody a fluidity between worlds, with you navigating the depths of emotion and imagination, while Zombies wander aimlessly between dimensions. Just as you absorb the feelings of others, Zombies mindlessly mimic their surroundings. Despite this, both of you possess a quiet strength and resilience, capable of enduring challenges and emerging with newfound understanding in the face of adversity.
             </p>
         </div>
         <div class="pig">
+            <button class="close">
+                <h4>X</h4>
+            </button>
             <h2>Pig</h2>
+            <img alt="Pig" src="images/pig.webp">
             <p>You are known for your boldness and adventurous spirit. Just like the energetic and independent Minecraft Pigs, you thrive in taking charge and exploring new territories fearlessly. Your determination mirrors the Pigs&#39; persistence in searching for food and discovering new areas. Both you and the Pigs embody a fearless pursuit of your goals.</p>
         </div>
         <div class="sheep">
+            <button class="close">
+                <h4>X</h4>
+            </button>
             <h2>Sheep</h2>
+            <img alt="Sheep" src="images/sheep.webp">
             <p>You possess a gentle and grounded nature, much like the serene Minecraft Sheep. Your calm demeanor and practical approach to life resonate with the Sheep&#39;s peaceful grazing and tranquil existence in the game. Just as you appreciate stability and comfort, the Sheep seek safety in their flock and enjoy the simple pleasures of the virtual landscape. Your shared affinity for tranquility and security makes the Minecraft Sheep a perfect reflection of your steadfast and nurturing personality.
             </p>
         </div>
         <div class="skeleton">
+            <button class="close">
+                <h4>X</h4>
+            </button>
             <h2>Skeleton</h2>
+            <img alt="Skeleton" src="images/skeleton.webp">
             <p>You share a fascinating connection with the enigmatic Minecraft Skeleton. Like you, the Skeleton possesses a multifaceted nature, alternating between aggression and cunning strategy in the game. Much like your adaptable and curious personality, the Skeleton adapts to various situations, utilizing its archery skills and tactical maneuvers to survive. Both you and the Skeleton thrive on versatility and intellect, making you share this complex and dynamic character.
             </p>
         </div>
         <div class="chicken">
+            <button class="close">
+                <h4>X</h4>
+            </button>
             <h2>Chicken</h2>
+            <img alt="Chicken" src="images/chicken.webp">
             <p>You exude a nurturing and protective aura, akin to the gentle Minecraft Chicken. Your caring nature and instinctual desire to provide for others mirror the Chicken's tendency to lay eggs for sustenance and care for its young in the game. Like you, the Chicken values the safety and comfort of its flock, symbolizing your deep-rooted connection to friends and home. Both you and the Chicken thrive in environments of love and security.
             </p>
         </div>
         <div class="spider">
+            <button class="close">
+                <h4>X</h4>
+            </button>
             <h2>Spider</h2>
+            <img alt="Spider" src="images/spider.webp">
             <p>You possess a natural magnetism and a bold presence, much like the intimidating Minecraft Spider. Your confidence and assertiveness mirror the Spider's predatory instincts and ability to command attention in the game. Like you, the Spider is fiercely independent and unafraid to pursue its desires, weaving its webs with precision and cunning. Both you and the Spider thrive in positions of power and influence, embracing challenges with courage and tenacity.
             </p>
         </div>
         <div class="creeper">
+            <button class="close">
+                <h4>X</h4>
+            </button>
             <h2>Creeper</h2>
+            <img alt="Creeper" src="images/creeper.webp">
             <p>You share a unique connection with the Minecraft Creeper. Much like your analytical mindset and attention to detail, the Creeper silently observes its surroundings, waiting for the opportune moment to strike. Your cautious approach to life resonates with the Creeper's tendency to cautiously approach its prey before exploding. Both you and the Creeper value precision and planning, utilizing strategy to achieve your goals. The Creeper reflects your methodical and strategic approach to navigating the challenges of the world.
             </p>
         </div>
         <div class="villager">
+            <button class="close">
+                <h4>X</h4>
+            </button>
             <h2>Villager</h2>
+            <img alt="Villager" src="images/villager.webp">
             <p>You embody harmony and diplomacy, much like the peace-loving Minecraft Villager. Your desire for balance and cooperation resonates with the Villager's communal nature, as it thrives in the bustling villages of the game, engaging in trade and fostering relationships. Like you, the Villager seeks fairness and justice, resolving conflicts through negotiation and compromise. Both you and the Villager excel in building connections and creating harmonious environments.
             </p>
         </div>
         <div class="ender-dragon">
+            <button class="close">
+                <h4>X</h4>
+            </button>
             <h2>Ender Dragon</h2>
+            <img alt="Ender Dragon" src="images/ender_dragon.webp">
             <p>You are the (final) BOSS. You are known for your mysterious nature, much like the Ender Dragon in Minecraft. Just as you delve into the depths of your emotions and thoughts, the Ender Dragon lurks in the shadows of the End, guarding its territory fiercely. Like the Ender Dragon, you are independent and protective of your territory and loved ones. You both possess a powerful and transformative energy, capable of leaving a lasting impact on those who you encounter.
             </p>
         </div>
         <div class="llama">
+            <button class="close">
+                <h4>X</h4>
+            </button>
             <h2>Llama</h2>
-            <p>You share a spirited connection with the adventurous Minecraft Llama. Just like you, the Llama eagerly accompanies traders on their journeys, exploring new lands and experiencing the thrill of discovery. Your independent nature aligns with the Llama's ability to traverse vast terrains alongside its companions, yet you both value the camaraderie and shared experiences that come with travel. With an insatiable curiosity driving you forward, you and the Llama embark on exhilarating adventures, seeking out new horizons and embracing the joy of exploration.
+            <img alt="Llama" src="images/llama.webp">
+            <p>You share a spirited connection with the adventurous Minecraft Llama. The Llama eagerly accompanies traders on their journeys, exploring new lands and experiencing the thrill of discovery. Your independent nature aligns with the Llama's ability to traverse vast terrains alongside its companions, yet you both value the camaraderie and shared experiences that come with travel. With a curiosity driving you forward, you and the Llama embark on adventures, seeking out new horizons and embracing the joy of exploration.
             </p>
         </div>
         <div class="wolf">
+            <button class="close">
+                <h4>X</h4>
+            </button>
             <h2>Wolf</h2>
+            <img alt="Wolf" src="images/wolf.webp">
             <p>You share a profound connection with the loyal Minecraft Wolf. Like you, the Wolf is steadfast and disciplined, loyal to its pack and fiercely protective of its territory. Your unwavering commitment to your goals mirrors the Wolf's dedication to its companions, as you both navigate the challenges of the Minecraft world with resilience and perseverance. Despite facing obstacles, you and the Wolf stand firm, relying on your strength and steadfastness to overcome adversity. Together, you epitomize the unyielding determination and loyalty.
             </p>
         </div>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>

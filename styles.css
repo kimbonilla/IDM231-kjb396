@@ -41,22 +41,32 @@ h1 {
     letter-spacing: .075rem;
 }
 
+h2 {
+    font-size: 2.5rem;
+    text-decoration: underline ;
+    text-underline-offset: .5rem;
+}
+
 h3 {
     font-size: 1.75rem;
     letter-spacing: .05rem;
 }
 
+h4 {
+    font-size: 1.5rem;
+    margin: 0;
+}
 
 p, input{
     font-family: 'manrope', sans-serif;
     letter-spacing: .05rem;
 }
 
-
 /*homepage*/
 /*column layout*/
 .container {
     height: 100vh;
+    width: 100vw;
     display: grid;
     grid-template-columns: 39vw 59vw;
     column-gap: 2vw;
@@ -81,14 +91,199 @@ p, input{
     line-height: 150%;
 }
 
-/*circle*/
-.circle {
-    align-self: center;
-    justify-self: end;
+/*help button*/
+.help-button button{
+    padding: 5px 15px;
+    border-width: 3px;
+    border-radius: 10px;
+    border-color: var(--brown);
+    background-color: var(--off-white);
+    cursor: pointer;
 }
 
-.circle img {
-    max-width: 55vw;
-    max-height: 90vh;
+.help-button h2{
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+}
+
+/*instructions*/
+.instructions {
+    visibility: hidden;
+}
+
+/*mob options*/
+.mob-options {
+    align-self: center;
+    justify-self: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     padding-right: 50px;
+}
+
+.mob-options img{
+    cursor: pointer;
+}
+
+/*audios*/
+.audios {
+    display: none;
+}
+
+/*cards*/
+.cards {
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    background-color: var(--off-white);
+    max-width: 50vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cards button {
+    display:none;
+    float: right;
+    margin: 25px 0 0;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-width: 3px;
+    border-color: var(--brown);
+    align-content: center;
+    text-align: center;
+}
+
+.cards p{
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    letter-spacing: .075rem; 
+}
+
+.cards img{
+    display:block;
+    max-height: 250px;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.enderman{
+    display:none;
+    background-color: var(--off-white);
+    padding: 0px 25px 25px;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: var(--brown);
+}
+
+.zombie{
+    display:none;
+    background-color: var(--off-white);
+    padding: 0px 25px 25px;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: var(--brown);
+}
+
+.pig{
+    display:none;
+    background-color: var(--off-white);
+    padding: 0px 25px 25px;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: var(--brown);
+}
+
+.sheep{
+    display:none;
+    background-color: var(--off-white);
+    padding: 0px 25px 25px;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: var(--brown);
+}
+
+.skeleton{
+    display:none;
+    background-color: var(--off-white);
+    padding: 0px 25px 25px;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: var(--brown);
+}
+
+.chicken{
+    display:none;
+    background-color: var(--off-white);
+    padding: 0px 25px 25px;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: var(--brown);
+}
+
+.spider{
+    display:none;
+    background-color: var(--off-white);
+    padding: 0px 25px 25px;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: var(--brown);
+}
+
+.creeper{
+    display:none;
+    background-color: var(--off-white);
+    padding: 0px 25px 25px;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: var(--brown);
+}
+
+.villager{
+    display:none;
+    background-color: var(--off-white);
+    padding: 0px 25px 25px;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: var(--brown);
+}
+
+.ender-dragon{
+    display:none;
+    background-color: var(--off-white);
+    padding: 0px 25px 25px;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: var(--brown);
+}
+
+.llama{
+    display:none;
+    background-color: var(--off-white);
+    padding: 0px 25px 25px;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: var(--brown);
+}
+
+.wolf{
+    display:none;
+    background-color: var(--off-white);
+    padding: 0px 25px 25px;
+    border-width: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: var(--brown);
 }

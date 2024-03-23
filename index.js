@@ -1,403 +1,124 @@
-/*help*/
-const helpButton= document.querySelector('.help-button button');
-const helpInfo= document.querySelector('.instructions');
-
-helpButton.addEventListener('click', function() {
-    
-    if (helpInfo.style.visibility=== 'hidden') {
-        helpInfo.style.visibility= 'visible';
-    } else {
-        helpInfo.style.visibility= 'hidden';
-    }
-});
-
-/*select mob*/
+/*audio*/
 document.addEventListener("DOMContentLoaded", function() {
-
-    const exitEndermanButton= document.querySelector('.enderman button')
-
-    exitEndermanButton.addEventListener("click", function() {
-        if (showEnderman.style.display = "block") {
-            showEnderman.style.display = "none";
-            const audio= document.querySelector('.enderman-audio')
-            audio.pause();
-        }
-    });
-
-    const smallEnderman= document.querySelector('.enderman-pic')
-    const showEnderman= document.querySelector('.enderman')
-
-    smallEnderman.addEventListener("click", function () {
-        if (showEnderman.style.display == "none") {
-            showEnderman.style.display = "block";
-            exitEndermanButton.style.display = "block";
-            const audio= document.querySelector('.enderman-audio')
-            audio.currentTime = 0;
-            audio.play();
-
-        } else {
-            showEnderman.style.display = "none";
-        }
-    });
-});
-
-const exitZombieButton= document.querySelector('.zombie button')
-
-    exitZombieButton.addEventListener("click", function() {
-        if (showZombie.style.display = "block") {
-            showZombie.style.display = "none";
-            const audio= document.querySelector('.zombie-audio')
-            audio.pause();
-        }
-    });
-
-const smallZombie= document.querySelector('.zombie-pic')
-const showZombie= document.querySelector('.zombie')
-
-document.addEventListener("DOMContentLoaded", function() {
-    smallZombie.addEventListener("click", function () {
-        if (showZombie.style.display == "none") {
-            showZombie.style.display = "block";
-            exitZombieButton.style.display = "block";
-            const audio= document.querySelector('.zombie-audio')
+    const showAndPlay = (selector, audioSelector) => {
+        const element = document.querySelector(selector);
+        if (element.style.display === "none") {
+            element.style.display = "block";
+            const audio = document.querySelector(audioSelector);
             audio.currentTime = 0;
             audio.play();
         } else {
-            showZombie.style.display = "none";
+            element.style.display = "none";
         }
-    });
-});
+    };
 
-const exitPigButton= document.querySelector('.pig button')
-
-    exitPigButton.addEventListener("click", function() {
-        if (showPig.style.display = "block") {
-            showPig.style.display = "none";
-            const audio= document.querySelector('.pig-audio')
+/*exit button*/
+    const addExitEventListener = (exitButtonSelector, elementSelector, audioSelector) => {
+        const exitButton = document.querySelector(exitButtonSelector);
+        exitButton.addEventListener("click", function() {
+            const element = document.querySelector(elementSelector);
+            element.style.display = "none";
+            const audio = document.querySelector(audioSelector);
             audio.pause();
-        }
+        });
+    };
+
+/*mob content*/
+    const mobSelectors = [
+        { button: '.enderman button', pic: '.enderman-pic', container: '.enderman', audio: '.enderman-audio' },
+        { button: '.zombie button', pic: '.zombie-pic', container: '.zombie', audio: '.zombie-audio' },
+        { button: '.pig button', pic: '.pig-pic', container: '.pig', audio: '.pig-audio' },
+        { button: '.sheep button', pic: '.sheep-pic', container: '.sheep', audio: '.sheep-audio' },
+        { button: '.skeleton button', pic: '.skeleton-pic', container: '.skeleton', audio: '.skeleton-audio' },
+        { button: '.chicken button', pic: '.chicken-pic', container: '.chicken', audio: '.chicken-audio' },
+        { button: '.spider button', pic: '.spider-pic', container: '.spider', audio: '.spider-audio' },
+        { button: '.creeper button', pic: '.creeper-pic', container: '.creeper', audio: '.creeper-audio' },
+        { button: '.villager button', pic: '.villager-pic', container: '.villager', audio: '.villager-audio' },
+        { button: '.ender-dragon button', pic: '.ender-dragon-pic', container: '.ender-dragon', audio: '.ender-dragon-audio' },
+        { button: '.llama button', pic: '.llama-pic', container: '.llama', audio: '.llama-audio' },
+        { button: '.wolf button', pic: '.wolf-pic', container: '.wolf', audio: '.wolf-audio' }
+    ];
+
+/*pop up cards on click*/
+    mobSelectors.forEach(({ button, pic, container, audio }) => {
+        const exitButton = `${container} button`;
+        const exitElement = `${container}-button`;
+        const exitAudio = `${container}-audio`;
+
+        const exitButtonSelector = document.querySelector(exitButton);
+        const elementSelector = document.querySelector(exitElement);
+        const audioSelector = document.querySelector(exitAudio);
+
+        addExitEventListener(exitButton, elementSelector, audioSelector);
+
+        const smallElement = document.querySelector(pic);
+        smallElement.addEventListener("click", () => showAndPlay(container, audio));
     });
 
-
-const smallPig= document.querySelector('.pig-pic')
-const showPig= document.querySelector('.pig')
-
-document.addEventListener("DOMContentLoaded", function() {
-    smallPig.addEventListener("click", function () {
-        if (showPig.style.display == "none") {
-            showPig.style.display = "block";
-            exitPigButton.style.display = "block";
-            const audio= document.querySelector('.pig-audio')
-            audio.currentTime = 0;
-            audio.play();
+/*help button*/
+    const helpButton = document.querySelector('.help-button button');
+    const helpInfo = document.querySelector('.instructions');
+    helpButton.addEventListener('click', function() {
+        if (helpInfo.style.visibility === 'hidden') {
+            helpInfo.style.visibility = 'visible';
         } else {
-            showPig.style.display = "none";
-        }
-    });
-});
-
-const exitSheepButton= document.querySelector('.sheep button')
-
-    exitSheepButton.addEventListener("click", function() {
-        if (showSheep.style.display = "block") {
-            showSheep.style.display = "none";
-            const audio= document.querySelector('.sheep-audio')
-            audio.pause();
+            helpInfo.style.visibility = 'hidden';
         }
     });
 
-const smallSheep= document.querySelector('.sheep-pic')
-const showSheep= document.querySelector('.sheep')
+/*pop up card on birthday input*/
+    const birthdayForm = document.querySelector('.birthday-form');
+    const handleBirthdayForm = event => {
+        event.preventDefault();
+        const birthdayInput = document.querySelector('.calendar');
+        const birthdayValue = birthdayInput.value;
+        let mob;
 
-document.addEventListener("DOMContentLoaded", function() {
-    smallSheep.addEventListener("click", function () {
-        if (showSheep.style.display == "none") {
-            showSheep.style.display = "block";
-            exitSheepButton.style.display = "block";
-            const audio= document.querySelector('.sheep-audio')
-            audio.currentTime = 0;
-            audio.play();
-        } else {
-            showSheep.style.display = "none";
+        const month = parseInt(birthdayValue.split('-')[1]);
+        const day = parseInt(birthdayValue.split('-')[2]);
+
+        const dateRanges = [
+            { mob: 'enderman', startMonth: 1, startDay: 20, endMonth: 2, endDay: 18 },
+            { mob: 'zombie', startMonth: 2, startDay: 19, endMonth: 3, endDay: 20 },
+            { mob: 'pig', startMonth: 3, startDay: 21, endMonth: 4, endDay: 19 },
+            { mob: 'sheep', startMonth: 4, startDay: 20, endMonth: 5, endDay: 20 },
+            { mob: 'skeleton', startMonth: 5, startDay: 21, endMonth: 6, endDay: 20 },
+            { mob: 'chicken', startMonth: 6, startDay: 21, endMonth: 7, endDay: 22 },
+            { mob: 'spider', startMonth: 7, startDay: 23, endMonth: 8, endDay: 22 },
+            { mob: 'creeper', startMonth: 8, startDay: 23, endMonth: 9, endDay: 22 },
+            { mob: 'villager', startMonth: 9, startDay: 23, endMonth: 10, endDay: 22 },
+            { mob: 'ender-dragon', startMonth: 10, startDay: 23, endMonth: 11, endDay: 21 },
+            { mob: 'llama', startMonth: 11, startDay: 22, endMonth: 12, endDay: 21 },
+            { mob: 'wolf', startMonth: 12, startDay: 22, endMonth: 1, endDay: 19 }
+        ];
+
+        for (const range of dateRanges) {
+            if ((month === range.startMonth && day >= range.startDay) || (month === range.endMonth && day <= range.endDay)) {
+                mob = range.mob;
+                break;
+            }
         }
-    });
-});
 
-const exitSkeletonButton= document.querySelector('.skeleton button')
+        const hideAllMobs = document.querySelectorAll('.cards > div');
+        hideAllMobs.forEach(m => m.style.display = 'none');
 
-    exitSkeletonButton.addEventListener("click", function() {
-        if (showSkeleton.style.display = "block") {
-            showSkeleton.style.display = "none";
-            const audio= document.querySelector('.skeleton-audio')
-            audio.pause();
-        }
-    });
+        const showMob = document.querySelector('.' + mob);
+        showMob.style.display = 'block';
 
-const smallSkeleton= document.querySelector('.skeleton-pic')
-const showSkeleton= document.querySelector('.skeleton')
-
-document.addEventListener("DOMContentLoaded", function() {
-    smallSkeleton.addEventListener("click", function () {
-        if (showSkeleton.style.display == "none") {
-            showSkeleton.style.display = "block";
-            exitSkeletonButton.style.display = "block";
-            const audio= document.querySelector('.skeleton-audio')
-            audio.currentTime = 0;
-            audio.play();
-        } else {
-            showSkeleton.style.display = "none";
-        }
-    });
-});
-
-const exitChickenButton= document.querySelector('.chicken button')
-
-    exitChickenButton.addEventListener("click", function() {
-        if (showChicken.style.display = "block") {
-            showChicken.style.display = "none";
-            const audio= document.querySelector('.chicken-audio')
-            audio.pause();
-        }
-    });
-
-const smallChicken= document.querySelector('.chicken-pic')
-const showChicken= document.querySelector('.chicken')
-
-document.addEventListener("DOMContentLoaded", function() {
-    smallChicken.addEventListener("click", function () {
-        if (showChicken.style.display == "none") {
-            showChicken.style.display = "block";
-            exitChickenButton.style.display = "block";
-            const audio= document.querySelector('.chicken-audio')
-            audio.currentTime = 0;
-            audio.play();
-        } else {
-            showChicken.style.display = "none";
-        }
-    });
-});
-
-const exitSpiderButton= document.querySelector('.spider button')
-
-    exitSpiderButton.addEventListener("click", function() {
-        if (showSpider.style.display = "block") {
-            showSpider.style.display = "none";
-            const audio= document.querySelector('.spider-audio')
-            audio.pause();
-        }
-    });
-
-const smallSpider= document.querySelector('.spider-pic')
-const showSpider= document.querySelector('.spider')
-
-document.addEventListener("DOMContentLoaded", function() {
-    smallSpider.addEventListener("click", function () {
-        if (showSpider.style.display == "none") {
-            showSpider.style.display = "block";
-            exitSpiderButton.style.display = "block";
-            const audio= document.querySelector('.spider-audio')
-            audio.currentTime = 0;
-            audio.play();
-        } else {
-            showSpider.style.display = "none";
-        }
-    });
-});
-
-const exitCreeperButton= document.querySelector('.creeper button')
-
-    exitCreeperButton.addEventListener("click", function() {
-        if (showCreeper.style.display = "block") {
-            showCreeper.style.display = "none";
-            const audio= document.querySelector('.creeper-audio')
-            audio.pause();
-        }
-    });
-
-const smallCreeper= document.querySelector('.creeper-pic')
-const showCreeper= document.querySelector('.creeper')
-
-document.addEventListener("DOMContentLoaded", function() {
-    smallCreeper.addEventListener("click", function () {
-        if (showCreeper.style.display == "none") {
-            showCreeper.style.display = "block";
-            exitCreeperButton.style.display = "block";
-            const audio= document.querySelector('.creeper-audio')
-            audio.currentTime = 0;
-            audio.play();
-        } else {
-            showCreeper.style.display = "none";
-        }
-    });
-});
-
-const exitVillagerButton= document.querySelector('.villager button')
-
-    exitVillagerButton.addEventListener("click", function() {
-        if (showVillager.style.display = "block") {
-            showVillager.style.display = "none";
-            const audio= document.querySelector('.villager-audio')
-            audio.pause();
-        }
-    });
-
-const smallVillager= document.querySelector('.villager-pic')
-const showVillager= document.querySelector('.villager')
-
-document.addEventListener("DOMContentLoaded", function() {
-    smallVillager.addEventListener("click", function () {
-        if (showVillager.style.display == "none") {
-            showVillager.style.display = "block";
-            exitVillagerButton.style.display = "block";
-            const audio= document.querySelector('.villager-audio')
-            audio.currentTime = 0;
-            audio.play();
-        } else {
-            showVillager.style.display = "none";
-        }
-    });
-});
-
-const exitEnderDragonButton= document.querySelector('.ender-dragon button')
-
-    exitEnderDragonButton.addEventListener("click", function() {
-        if (showEnderDragon.style.display = "block") {
-            showEnderDragon.style.display = "none";
-            const audio= document.querySelector('.ender-dragon-audio')
-            audio.pause();
-        }
-    });
-
-const smallEnderDragon= document.querySelector('.ender-dragon-pic')
-const showEnderDragon= document.querySelector('.ender-dragon')
-
-document.addEventListener("DOMContentLoaded", function() {
-    smallEnderDragon.addEventListener("click", function () {
-        if (showEnderDragon.style.display == "none") {
-            showEnderDragon.style.display = "block";
-            exitEnderDragonButton.style.display = "block";
-            const audio= document.querySelector('.ender-dragon-audio')
-            audio.currentTime = 0;
-            audio.play();
-        } else {
-            showEnderDragon.style.display = "none";
-        }
-    });
-});
-
-const exitLlamaButton= document.querySelector('.llama button')
-
-    exitLlamaButton.addEventListener("click", function() {
-        if (showLlama.style.display = "block") {
-            showLlama.style.display = "none";
-            const audio= document.querySelector('.llama-audio')
-            audio.pause();
-        }
-    });
-
-const smallLlama= document.querySelector('.llama-pic')
-const showLlama= document.querySelector('.llama')
-
-document.addEventListener("DOMContentLoaded", function() {
-    smallLlama.addEventListener("click", function () {
-        if (showLlama.style.display == "none") {
-            showLlama.style.display = "block";
-            exitLlamaButton.style.display = "block";
-            const audio= document.querySelector('.llama-audio')
-            audio.currentTime = 0;
-            audio.play();
-        } else {
-            showLlama.style.display = "none";
-        }
-    });
-});
-
-const exitWolfButton= document.querySelector('.wolf button')
-
-    exitWolfButton.addEventListener("click", function() {
-        if (showWolf.style.display = "block") {
-            showWolf.style.display = "none";
-            const audio= document.querySelector('.wolf-audio')
-            audio.pause();
-        }
-    });
-
-const smallWolf= document.querySelector('.wolf-pic')
-const showWolf= document.querySelector('.wolf')
-
-document.addEventListener("DOMContentLoaded", function() {
-    smallWolf.addEventListener("click", function () {
-        if (showWolf.style.display == "none") {
-            showWolf.style.display = "block";
-            exitWolfButton.style.display = "block";
-            const audio= document.querySelector('.wolf-audio')
-            audio.currentTime = 0;
-            audio.play();
-        } else {
-            showWolf.style.display = "none";
-        }
-    });
-});
-
-/*select birthday*/
-const birthdayForm = document.querySelector('.birthday-form');
-
-const handleBirthdayForm = event => {
-    
-    event.preventDefault();
-
-    const birthdayInput = document.querySelector('.calendar');
-    const birthdayValue = birthdayInput.value;
-
-    let mob;
-    let month = parseInt(birthdayValue.split('-')[1]);
-    let day = parseInt(birthdayValue.split('-')[2]);
-
-    if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
-        mob = 'enderman';
-    } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
-        mob = 'zombie';
-    } else if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
-        mob = 'pig';
-    } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
-        mob = 'sheep';
-    } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
-        mob = 'skeleton';
-    } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
-        mob = 'chicken';
-        } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
-        mob = 'spider';
-    } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
-        mob = 'creeper';
-    } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
-        mob = 'villager';
-    } else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
-        mob = 'ender-dragon';
-    } else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
-        mob = 'llama';
-    } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
-        mob = 'wolf';
-    }
-
-    const hideAllMobs = document.querySelectorAll('.cards > div');
-    hideAllMobs.forEach(m => m.style.display = 'none');
-
-    const showMob = document.querySelector('.' + mob);
-    showMob.style.display = 'block';
-
-    const audio = document.querySelector('.' + mob + '-audio');
-    if (audio) {
-        audio.play();
-    }
-
-    const exitButton = showMob.querySelector('.close');
-    exitButton.style.display = 'block';
-    exitButton.addEventListener('click', function() {
-        showMob.style.display = 'none';
+        const audio = document.querySelector('.' + mob + '-audio');
         if (audio) {
-            audio.pause();
+            audio.play();
         }
-    });
-};
 
-birthdayForm.addEventListener('submit', handleBirthdayForm);
+        const exitButton = showMob.querySelector('.close');
+        exitButton.style.display = 'block';
+        exitButton.addEventListener('click', function() {
+            showMob.style.display = 'none';
+            if (audio) {
+                audio.pause();
+            }
+        });
+    };
+
+    birthdayForm.addEventListener('submit', handleBirthdayForm);
+});

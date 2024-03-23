@@ -391,6 +391,7 @@ const handleBirthdayForm = event => {
     }
 
     const exitButton = showMob.querySelector('.close');
+    exitButton.style.display = 'block';
     exitButton.addEventListener('click', function() {
         showMob.style.display = 'none';
         if (audio) {

@@ -340,60 +340,50 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 /*select birthday*/
+const birthdayForm = document.querySelector('.birthday-form');
 
-function computeZod(){
-    console.log('computeZod called!');
-    let userBday = zodDateObj.value;
-    console.log('userBday is ' + userBday);
-    let monthStr = userBday.substr(5,2)
-    let dayStr = userBday.substr(8,2);
-    //convert str to number
-    let monthNum = parseInt(monthStr);
-    let dayNum = parseInt(dayStr);
+const handleBirthdayForm = event => {
+    
+    event.preventDefault();
 
-    console.log('monthNum = ' + monthNum)
-    console.log('dayNum = ' + dayNum)
-}
+    const birthdayInput = document.querySelector('.calendar');
+    const birthdayValue = birthdayInput.value;
 
-/*
-function getMonthDay(dateString) {
-    var dateArr = dateString.split("-");
-    var month = dateArr[1]
-    var day = dateArr[2]
-    return month, day
-}
+    let mob;
+    let month = parseInt(birthdayValue.split('-')[1]);
+    let day = parseInt(birthdayValue.split('-')[2]);
 
-function getBirthdayMob() {
-    var dateString = document.getElementsByClassName("calendar")[0].value;
-    var month, day = getMonth(dateString);
-    if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
-        showWolf.style.display = "block";
-            exitWolfButton.style.display = "block";
-            const audio= document.querySelector('.wolf-audio')
-            audio.currentTime = 0;
-            audio.play();
-    } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
-        document.getElementById("Mob").textContent = "llama";
-    } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
-        document.getElementById("Mob").textContent = "ender-dragon";
-    } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
-        document.getElementById("Mob").textContent = "villager";
-    } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
-        document.getElementById("Mob").textContent = "creeper";
-    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
-        document.getElementById("Mob").textContent = "spider";
-    } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
-        document.getElementById("Mob").textContent = "chicken";
-    } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
-        document.getElementById("Mob").textContent = "skeleton";
-    } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
-        document.getElementById("Mob").textContent = "sheep";
-    } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
-        document.getElementById("Mob").textContent = "pig";
-    } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
-        document.getElementById("Mob").textContent = "zombie";
-    } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
-        document.getElementById("Mob").textContent = "enderman";
+    if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
+        mob = 'enderman';
+    } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+        mob = 'zombie';
+    } else if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+        mob = 'pig';
+    } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
+        mob = 'sheep';
+    } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+        mob = 'skeleton';
+    } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
+        mob = 'chicken';
+        } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+        mob = 'spider';
+    } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+        mob = 'creeper';
+    } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
+        mob = 'villager';
+    } else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
+        mob = 'ender-dragon';
+    } else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
+        mob = 'llama';
+    } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
+        mob = 'wolf';
     }
-}
-*/
+
+    const hideAllMobs = document.querySelectorAll('.cards > div');
+    hideAllMobs.forEach(m => m.style.display = 'none');
+
+    const showMob = document.querySelector('.' + mob);
+    showMob.style.display = 'block';
+};
+
+birthdayForm.addEventListener('submit', handleBirthdayForm);
